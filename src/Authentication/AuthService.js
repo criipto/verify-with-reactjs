@@ -8,7 +8,8 @@ export default class AuthService {
       authority: process.env.REACT_APP_IDENTITY_CONFIG_AUTHORITY, // Your Criipto Domain eg. https://<YOUR_COMPANY>.criipto.id
       client_id: process.env.REACT_APP_IDENTITY_CONFIG_CLIENT_ID, // Your Criipto Client ID/Realm
       redirect_uri: process.env.REACT_APP_IDENTITY_CONFIG_REDIRECT_URI, // The Callback URI of your application where Criipto Verify will redirect to after the user has authenticated
-      responseType: process.env.REACT_APP_IDENTITY_CONFIG_RESPONSE_TYPE, // The type of response desired from Criipto Verify
+      response_type: process.env.REACT_APP_IDENTITY_CONFIG_RESPONSE_TYPE, // The type of response desired from Criipto Verify
+      loadUserInfo: true,
       post_logout_redirect_uri: process.env.REACT_APP_IDENTITY_CONFIG_POST_LOGOUT_REDIRECT_URI, // The Callback URI of your application where Criipto Verify will redirect to after the user has signed out
       acr_values: acr_values, // Specific authentication service to use eg. for login with Vipps app: urn:grn:authn:no:vipps
       userStore: new WebStorageStateStore({ store: window.sessionStorage }), // Storage object used to persist currently authenticated user
